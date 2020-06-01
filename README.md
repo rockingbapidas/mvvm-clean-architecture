@@ -1,7 +1,7 @@
 # Mvvm Architecture
 Android app architecture sample in Kotlin and Kotling DSL.
 
-Architecture - MVVM
+Architecture - MVVM + Clean Architecture
 
 Database - Room
 
