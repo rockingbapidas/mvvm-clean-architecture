@@ -1,5 +1,5 @@
-# Mvvm Architecture
-Android app architecture sample in Kotlin and Kotling DSL.
+# Mvvm + Clean Architecture
+Android news reading app sample.
 
 Architecture - MVVM + Clean Architecture
 
@@ -16,3 +16,5 @@ Pagination - Jetpack Paging
 UiBinding - Android DataBinding
 
 Unit Test - Juint and Mockito
+
+Gradle - Kotling DSL
