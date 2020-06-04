@@ -19,7 +19,7 @@
         tools:ignore="AllowBackup"
         tools:targetApi="n">
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name="com.bapidas.news.main.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="unspecified"
             android:theme="@style/AppTheme.SplashScreen">
@@ -31,11 +31,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.main.news.listing.NewsActivity"
+            android:name="com.bapidas.news.main.news.listing.NewsActivity"
             android:screenOrientation="unspecified"
             android:theme="@style/AppTheme.NewsList" />
         <activity
-            android:name=".ui.main.news.detail.NewsDetailsActivity"
+            android:name="com.bapidas.news.main.news.detail.NewsDetailsActivity"
             android:screenOrientation="unspecified"
             android:theme="@style/AppTheme.NewsDetail" />
     </application>

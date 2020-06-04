@@ -1,1 +1,5 @@
 include(":app")
+include(":framework")
+include(":usecase")
+include(":data")
+include(":domain")

@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.bapidas.news.ui.main.news.detail.NewsDetailViewModel" />
+            type="com.bapidas.news.main.news.detail.NewsDetailViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

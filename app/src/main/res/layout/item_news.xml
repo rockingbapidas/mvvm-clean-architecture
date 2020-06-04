@@ -5,11 +5,11 @@
 
         <variable
             name="item"
-            type="com.bapidas.news.ui.model.Article" />
+            type="com.bapidas.news.model.Article" />
 
         <variable
             name="callback"
-            type="com.bapidas.news.ui.base.adapter.callback.ItemViewListener" />
+            type="com.bapidas.news.base.adapter.callback.ItemViewListener" />
 
     </data>
 
@@ -21,7 +21,7 @@
         android:layout_height="190dp"
         android:layout_marginStart="@dimen/dimen_16dp"
         android:layout_marginEnd="@dimen/dimen_16dp"
-        android:onClick="@{(view) -> callback.onItemClick(view, item)}"
+        android:onClick="@{(v) -> callback.onItemClick(v, item)}"
         android:transitionName="card"
         app:cardCornerRadius="@dimen/dimen_8dp"
         app:cardElevation="@dimen/dimen_8dp">

@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.bapidas.news.ui.main.news.listing.NewsViewModel" />
+            type="com.bapidas.news.main.news.listing.NewsViewModel" />
     </data>
 
 

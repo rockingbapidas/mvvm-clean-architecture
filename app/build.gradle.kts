@@ -38,18 +38,6 @@ android {
         testInstrumentationRunner = TestDependencies.instrumentationRunner
         setProperty("archivesBaseName", "newsapp-v${versionName}(${versionCode})")
         buildConfigField(
-            "int", ConfigField.DATABASE_VERSION, Apps.databaseVersion
-        )
-        buildConfigField(
-            "String", ConfigField.DOMAIN, "\"${Apps.domain}\""
-        )
-        buildConfigField(
-            "String", ConfigField.API_DOMAIN, "\"${Apps.apiDomain}\""
-        )
-        buildConfigField(
-            "String", ConfigField.API_KEY, "\"${Apps.apiKey}\""
-        )
-        buildConfigField(
             "Boolean", ConfigField.LOCAL_CACHE, Apps.localCache
         )
     }
@@ -79,6 +67,10 @@ android {
     }
 }
 
+androidExtensions {
+    isExperimental = true
+}
+
 kapt {
     javacOptions {
         option("-Xmaxerrs", 500000)
@@ -86,27 +78,18 @@ kapt {
 }
 
 dependencies {
-    implementation(
-        fileTree(
-            mapOf(
-                "dir" to "src/main/libs",
-                "include" to listOf("*.jar", "*.aar")
-            )
-        )
-    )
+    implementation(fileTree(mapOf("dir" to "src/main/libs", "include" to listOf("*.jar", "*.aar"))))
+    implementation(project(":framework"))
+
+    androidx()
+    lifeCycle()
+    shimmer()
 
     kotlin()
-    androidx()
-    retrofit()
-    okHttp()
-    rxJava()
-    dagger()
-    lifeCycle()
-    room()
     paging()
-    glide()
-    uiLibrary()
+    dagger()
+    timber()
     jUnit()
     mockito()
-    miscellaneousSdks()
+    androidxTest()
 }

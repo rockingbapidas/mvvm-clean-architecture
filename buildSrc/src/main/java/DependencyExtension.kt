@@ -5,6 +5,10 @@ private fun DependencyHandler.implementation(depName: String) {
     add("implementation", depName)
 }
 
+private fun DependencyHandler.api(depName: String) {
+    add("api", depName)
+}
+
 private fun DependencyHandler.kapt(depName: String) {
     add("kapt", depName)
 }
@@ -17,58 +21,17 @@ private fun DependencyHandler.androidTestImplementation(depName: String) {
     add("androidTestImplementation", depName)
 }
 
-//Dependency Handler extension
-fun DependencyHandler.dagger() {
-    implementation(Dependencies.dagger_android)
-    kapt(Dependencies.dagger_compiler)
-    kapt(Dependencies.dagger_processor)
-}
-
-fun DependencyHandler.rxJava() {
-    implementation(Dependencies.rx_java)
-    implementation(Dependencies.rx_android)
-}
-
-fun DependencyHandler.retrofit() {
-    implementation(Dependencies.retrofit)
-    implementation(Dependencies.retrofit_rx_java)
-    implementation(Dependencies.retrofit_gson)
-}
-
-fun DependencyHandler.okHttp() {
-    implementation(Dependencies.logging_interceptor)
-    implementation(Dependencies.ok_http_url_connection)
-}
-
-fun DependencyHandler.room() {
-    implementation(Dependencies.room_runtime)
-    kapt(Dependencies.room_compiler)
-    implementation(Dependencies.room_rx_java)
-}
-
-fun DependencyHandler.paging() {
-    implementation(Dependencies.paging_runtime)
-    implementation(Dependencies.paging_common)
-    implementation(Dependencies.paging_rx_java)
+//Dependency Handler extension for other library
+fun DependencyHandler.kotlin() {
+    implementation(Dependencies.kotlin_stdlib)
+    implementation(Dependencies.kotlin_reflect)
 }
 
 fun DependencyHandler.lifeCycle() {
     implementation(Dependencies.extensions)
-    implementation(Dependencies.reactive_streams)
     implementation(Dependencies.view_model)
-}
-
-fun DependencyHandler.glide() {
-    implementation(Dependencies.glide)
-    kapt(Dependencies.glide_compiler)
-    implementation(Dependencies.glide_integration)
-}
-
-fun DependencyHandler.kotlin() {
-    implementation(Dependencies.kotlin_stdlib)
-    implementation(Dependencies.kotlin_reflect)
-    //Test Libraries
-    testImplementation(TestDependencies.kotlin_test)
+    implementation(Dependencies.runtime)
+    implementation(Dependencies.live_data)
 }
 
 fun DependencyHandler.androidx() {
@@ -77,27 +40,69 @@ fun DependencyHandler.androidx() {
     implementation(Dependencies.app_compat)
     implementation(Dependencies.multi_dex)
     implementation(Dependencies.constraint_layout)
-    //Test Libraries
+}
+
+fun DependencyHandler.shimmer() {
+    implementation(Dependencies.shimmer)
+}
+
+fun DependencyHandler.dagger() {
+    api(Dependencies.dagger_android)
+    kapt(Dependencies.dagger_compiler)
+    kapt(Dependencies.dagger_processor)
+}
+
+fun DependencyHandler.retrofit() {
+    api(Dependencies.retrofit)
+    api(Dependencies.retrofit_gson)
+}
+
+fun DependencyHandler.okHttp() {
+    api(Dependencies.ok_http)
+    api(Dependencies.ok_http_url_connection)
+    api(Dependencies.logging_interceptor)
+}
+
+fun DependencyHandler.room() {
+    api(Dependencies.room_runtime)
+    kapt(Dependencies.room_compiler)
+    api(Dependencies.room_ktx)
+}
+
+fun DependencyHandler.paging() {
+    api(Dependencies.paging_runtime)
+}
+
+fun DependencyHandler.glide() {
+    api(Dependencies.glide)
+    kapt(Dependencies.glide_compiler)
+    api(Dependencies.glide_integration)
+}
+
+fun DependencyHandler.gson() {
+    api(Dependencies.gson)
+}
+
+fun DependencyHandler.timber() {
+    api(Dependencies.timber)
+}
+
+//Dependency Handler extension for test library
+fun DependencyHandler.androidxTest() {
+    testImplementation(TestDependencies.arch_core_testing)
     androidTestImplementation(TestDependencies.test_runner)
+    androidTestImplementation(TestDependencies.test_rules)
     androidTestImplementation(TestDependencies.test_ext_junit)
     androidTestImplementation(TestDependencies.test_espresso_core)
-    testImplementation(TestDependencies.arch_core_testing)
 }
 
 fun DependencyHandler.jUnit() {
     testImplementation(TestDependencies.junit)
+    testImplementation(TestDependencies.kotlin_test)
 }
 
 fun DependencyHandler.mockito() {
-    testImplementation(TestDependencies.mockito_kotlin)
+    testImplementation(TestDependencies.mockito_core)
     testImplementation(TestDependencies.mockito_inline)
-}
-
-fun DependencyHandler.uiLibrary() {
-    implementation(Dependencies.shimmer)
-}
-
-fun DependencyHandler.miscellaneousSdks() {
-    implementation(Dependencies.gson)
-    implementation(Dependencies.timber)
+    androidTestImplementation(TestDependencies.mockito_android)
 }
