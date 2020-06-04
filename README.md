@@ -7,16 +7,16 @@ Database - Room Persistent
 
 Dependency Injection - Android Dagger2
 
-Reactive Programming - RxJava2, RxAndroid
+Reactive Programming - Coroutine
 
 Network - Retrofit and OkHttp
 
-Pagination - Jetpack Paging
+Pagination - JetPack Paging
 
 UiBinding - Android DataBinding
 
-Unit Test - Juint and Mockito
+Unit Test - Junit and Mockito
 
 Instrumentation Test - Espresso
 
-Gradle - Kotling DSL
+Gradle - Kotlin DSL
