@@ -1,18 +1,22 @@
-# Mvvm Architecture
-Android app architecture sample in Kotlin and Kotling DSL.
+# Mvvm + Clean Architecture
+Android news reading app sample.
 
-Architecture - MVVM
+Architecture - MVVM + Clean Architecture
 
-Database - Room
+Database - Room Persistent
 
-Dependency Injection - Android Dagger 2
+Dependency Injection - Android Dagger2
 
-Reactive Programming - RxJava 2, RxAndroid
+Reactive Programming - RxJava2, RxAndroid
 
-Network - Retrofit and Mockito
+Network - Retrofit and OkHttp
 
 Pagination - Jetpack Paging
 
 UiBinding - Android DataBinding
 
 Unit Test - Juint and Mockito
+
+Instrumentation Test - Espresso
+
+Gradle - Kotling DSL
