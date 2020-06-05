@@ -1,4 +1,4 @@
-# Mvvm + Clean Architecture
+# Multimodule + Mvvm + Clean Architecture
 Android news reading app sample.
 
 Architecture - Multimodule + MVVM + Clean Architecture
