@@ -5,11 +5,11 @@ import android.content.Intent
 import android.view.View
 import androidx.lifecycle.Observer
 import com.bapidas.news.R
-import com.bapidas.news.base.activity.BaseActivity
-import com.bapidas.news.base.adapter.callback.ItemViewListener
-import com.bapidas.news.base.adapter.recycler.decoration.VerticalSpaceItemDecoration
+import com.bapidas.news.appcore.activity.BaseActivity
+import com.bapidas.news.appcore.adapter.callback.ItemViewListener
+import com.bapidas.news.appcore.adapter.recycler.decoration.VerticalSpaceItemDecoration
+import com.bapidas.news.appcore.extensions.dp
 import com.bapidas.news.databinding.ActivityNewsBinding
-import com.bapidas.news.extensions.dp
 import com.bapidas.news.main.news.detail.NewsDetailsActivity
 import com.bapidas.news.main.news.listing.adapter.NewsAdapter
 import com.bapidas.news.model.Article

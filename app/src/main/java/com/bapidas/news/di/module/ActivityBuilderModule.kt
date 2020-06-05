@@ -1,6 +1,6 @@
 package com.bapidas.news.di.module
 
-import com.bapidas.news.framework.di.scope.ActivityScope
+import com.bapidas.news.appcore.di.scope.ActivityScope
 import com.bapidas.news.main.MainActivity
 import com.bapidas.news.main.MainActivityModule
 import com.bapidas.news.main.news.detail.NewsDetailActivityModule

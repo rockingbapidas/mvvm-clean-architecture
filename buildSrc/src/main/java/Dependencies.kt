@@ -13,6 +13,7 @@ object Versions {
     const val lifecycle = "2.2.0"
     const val room = "2.2.4"
     const val paging = "2.1.1"
+    const val work = "2.3.2"
     const val glide = "4.11.0"
     const val timber = "4.7.1"
     const val shimmer = "0.5.0"
@@ -64,7 +65,9 @@ object Dependencies {
 
     const val paging_runtime = "androidx.paging:paging-runtime-ktx:${Versions.paging}"
 
-    const val dagger_android = "com.google.dagger:dagger-android:${Versions.dagger}"
+    const val work_runtime = "androidx.work:work-runtime-ktx:${Versions.work}"
+
+    const val dagger_android = "com.google.dagger:dagger-android-support:${Versions.dagger}"
     const val dagger_processor = "com.google.dagger:dagger-android-processor:${Versions.dagger}"
     const val dagger_compiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
 

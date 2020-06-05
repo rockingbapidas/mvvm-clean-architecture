@@ -2,8 +2,8 @@ package com.bapidas.news.main.news.listing.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.bapidas.news.R
-import com.bapidas.news.base.adapter.callback.ItemViewListener
-import com.bapidas.news.base.adapter.recycler.BasePagedListAdapter
+import com.bapidas.news.appcore.adapter.callback.ItemViewListener
+import com.bapidas.news.appcore.adapter.recycler.BasePagedListAdapter
 import com.bapidas.news.model.Article
 
 class NewsAdapter(private val callback: ItemViewListener) :

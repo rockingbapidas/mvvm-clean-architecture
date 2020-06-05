@@ -1,14 +1,15 @@
 package com.bapidas.news.framework.network.source
 
-import com.bapidas.news.data.source.NewsRemoteDataSource
 import com.bapidas.news.framework.BuildConfig
 import com.bapidas.news.framework.network.api.NewsRemoteApi
 
-class RemoteNewsDataSource(private val newsRemoteApi: NewsRemoteApi) : NewsRemoteDataSource {
+class RemoteNewsDataSource(private val newsRemoteApi: NewsRemoteApi) : IRemoteNewsDataSource {
+
     override suspend fun getRemoteNews(page: Int) =
         newsRemoteApi.fetchNewsFromServer(
+            page,
+            PAGE_SIZE,
             CATEGORY,
-            PAGE_SIZE, page,
             BuildConfig.API_KEY
         )
 

@@ -1,7 +1,7 @@
 package com.bapidas.news.main
 
-import com.bapidas.news.base.viewmodel.BaseViewModel
-import com.bapidas.news.framework.di.scope.ActivityScope
+import com.bapidas.news.appcore.di.scope.ActivityScope
+import com.bapidas.news.appcore.viewmodel.BaseViewModel
 import javax.inject.Inject
 
 @ActivityScope

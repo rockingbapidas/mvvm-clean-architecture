@@ -21,6 +21,12 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
+    <style name="AppTheme.ToolbarTitleTextStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/dimen_29sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/roboto_slab_bold</item>
+    </style>
+
     <style name="AppTheme.SplashScreen" parent="AppTheme.FullScreen">
         <item name="android:windowBackground">@drawable/bg_splash_screen</item>
     </style>
@@ -32,11 +38,5 @@
 
     <style name="AppTheme.NewsDetail" parent="AppTheme">
 
-    </style>
-
-    <style name="AppTheme.ToolbarTitleTextStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">@dimen/dimen_29sp</item>
-        <item name="android:textColor">@color/colorAccent</item>
-        <item name="android:fontFamily">@font/roboto_slab_bold</item>
     </style>
 </resources>

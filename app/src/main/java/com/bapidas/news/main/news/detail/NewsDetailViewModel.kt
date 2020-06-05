@@ -2,8 +2,8 @@ package com.bapidas.news.main.news.detail
 
 import android.content.Intent
 import androidx.lifecycle.MutableLiveData
-import com.bapidas.news.base.viewmodel.BaseViewModel
-import com.bapidas.news.framework.di.scope.ActivityScope
+import com.bapidas.news.appcore.di.scope.ActivityScope
+import com.bapidas.news.appcore.viewmodel.BaseViewModel
 import com.bapidas.news.model.Article
 import javax.inject.Inject
 

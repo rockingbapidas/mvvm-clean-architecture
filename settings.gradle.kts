@@ -1,3 +1,4 @@
+include(":appcore")
 include(":app")
 include(":framework")
 include(":usecase")

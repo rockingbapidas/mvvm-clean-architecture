@@ -42,6 +42,10 @@ fun DependencyHandler.androidx() {
     implementation(Dependencies.constraint_layout)
 }
 
+fun DependencyHandler.workManager() {
+    implementation(Dependencies.work_runtime)
+}
+
 fun DependencyHandler.shimmer() {
     implementation(Dependencies.shimmer)
 }

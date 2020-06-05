@@ -1,7 +1,7 @@
 package com.bapidas.news.main
 
 import com.bapidas.news.R
-import com.bapidas.news.base.activity.BaseActivity
+import com.bapidas.news.appcore.activity.BaseActivity
 import com.bapidas.news.databinding.ActivityMainBinding
 import com.bapidas.news.main.news.listing.NewsActivity
 

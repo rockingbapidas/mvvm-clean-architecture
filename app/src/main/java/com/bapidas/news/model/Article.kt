@@ -10,6 +10,5 @@ class Article(
     val sourceName: String? = null
 ) : Serializable {
     val dateString
-        get() = publishedAt.split("T")
-            .getOrElse(0) { "" }
+        get() = publishedAt.split("T").getOrElse(0) { "" }
 }

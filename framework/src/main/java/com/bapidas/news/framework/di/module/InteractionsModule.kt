@@ -7,7 +7,7 @@ import com.bapidas.news.framework.interactions.NewsInteractions
 import com.bapidas.news.framework.network.api.NewsRemoteApi
 import com.bapidas.news.framework.network.repository.RemoteNewsRepository
 import com.bapidas.news.framework.network.source.RemoteNewsDataSource
-import com.bapidas.news.framework.usecase.FetchLocalNews
+import com.bapidas.news.framework.usecase.FetchNews
 import com.bapidas.news.framework.usecase.FetchNewsCount
 import com.bapidas.news.framework.usecase.FetchRemoteNews
 import com.bapidas.news.framework.usecase.SaveNews
@@ -26,7 +26,7 @@ class InteractionsModule {
         val remoteRepository = RemoteNewsRepository(RemoteNewsDataSource(newsRemoteApi))
         return NewsInteractions(
             SaveNews(localRepository),
-            FetchLocalNews(localRepository),
+            FetchNews(localRepository),
             FetchNewsCount(localRepository),
             FetchRemoteNews(GetNews(remoteRepository))
         )

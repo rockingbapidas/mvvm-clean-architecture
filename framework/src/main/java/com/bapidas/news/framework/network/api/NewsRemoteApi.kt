@@ -8,9 +8,9 @@ import retrofit2.http.Query
 interface NewsRemoteApi {
     @GET(Urls.News.ARTICLES_API)
     suspend fun fetchNewsFromServer(
-        @Query("q") category: String,
-        @Query("pageSize") pageSize: Int,
         @Query("page") page: Int,
+        @Query("pageSize") pageSize: Int,
+        @Query("q") category: String,
         @Query("apiKey") apiKey: String
     ): NewsList
 }

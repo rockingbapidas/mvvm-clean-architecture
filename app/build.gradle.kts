@@ -79,14 +79,17 @@ kapt {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "src/main/libs", "include" to listOf("*.jar", "*.aar"))))
+
+    implementation(project(":appcore"))
     implementation(project(":framework"))
 
     androidx()
+    paging()
+    workManager()
     lifeCycle()
     shimmer()
 
     kotlin()
-    paging()
     dagger()
     timber()
     jUnit()

@@ -9,7 +9,7 @@
 
         <variable
             name="callback"
-            type="com.bapidas.news.base.adapter.callback.ItemViewListener" />
+            type="com.bapidas.news.appcore.adapter.callback.ItemViewListener" />
 
     </data>
 

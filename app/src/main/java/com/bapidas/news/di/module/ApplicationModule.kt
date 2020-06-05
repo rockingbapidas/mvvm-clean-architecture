@@ -3,8 +3,8 @@ package com.bapidas.news.di.module
 import android.app.Application
 import android.content.Context
 import com.bapidas.news.NewsApplication
+import com.bapidas.news.appcore.di.qualifier.ApplicationContext
 import com.bapidas.news.framework.di.module.*
-import com.bapidas.news.framework.di.qualifier.ApplicationContext
 import dagger.Binds
 import dagger.Module
 import dagger.android.AndroidInjectionModule
@@ -13,6 +13,9 @@ import dagger.android.AndroidInjectionModule
     includes = [
         AndroidInjectionModule::class,
         ActivityBuilderModule::class,
+        ServiceBuilderModule::class,
+        ReceiverBuilderModule::class,
+        WorkerBuilderModule::class,
         TimberModule::class,
         NetworkModule::class,
         RoomModule::class,
