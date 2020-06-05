@@ -1,3 +1,4 @@
+include(":headlines")
 include(":appcore")
 include(":app")
 include(":framework")

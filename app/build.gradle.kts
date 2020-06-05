@@ -37,9 +37,6 @@ android {
         versionCode = Apps.versionCode
         testInstrumentationRunner = TestDependencies.instrumentationRunner
         setProperty("archivesBaseName", "newsapp-v${versionName}(${versionCode})")
-        buildConfigField(
-            "Boolean", ConfigField.LOCAL_CACHE, Apps.localCache
-        )
     }
 
     testOptions {
@@ -82,6 +79,7 @@ dependencies {
 
     implementation(project(":appcore"))
     implementation(project(":framework"))
+    implementation(project(":headlines"))
 
     androidx()
     paging()
