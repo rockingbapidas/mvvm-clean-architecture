@@ -1,22 +1,24 @@
 # Mvvm + Clean Architecture
 Android news reading app sample.
 
-Architecture - MVVM + Clean Architecture
+Architecture - Multimodule + MVVM + Clean Architecture
 
 Database - Room Persistent
 
 Dependency Injection - Android Dagger2
 
-Reactive Programming - Coroutine
+Reactive Programming - Coroutines
 
 Network - Retrofit and OkHttp
 
-Pagination - JetPack Paging
+Architecture Components - Paging, WorkManager, Livedata, Viewmodel
 
 UiBinding - Android DataBinding
 
 Unit Test - Junit and Mockito
 
 Instrumentation Test - Espresso
+
+Image loading - Glide
 
 Gradle - Kotlin DSL
