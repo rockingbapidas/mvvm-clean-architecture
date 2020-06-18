@@ -17,5 +17,7 @@ data class NewsLocal(
     @ColumnInfo(name = "url_to_image")
     val urlToImage: String? = null,
     @ColumnInfo(name = "source_name")
-    val sourceName: String? = null
+    val sourceName: String? = null,
+    @ColumnInfo(name = "url")
+    val url: String? = null
 )

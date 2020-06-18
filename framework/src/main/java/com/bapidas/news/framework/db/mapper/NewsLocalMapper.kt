@@ -12,6 +12,7 @@ fun NewsListEntity.toNewsLocal(): List<NewsLocal> {
             title = it.title,
             description = it.description,
             urlToImage = it.urlToImage,
+            url = it.url,
             sourceName = it.source?.name
         )
     }
@@ -23,6 +24,7 @@ fun NewsEntity.toNewsLocal(): NewsLocal {
         title = title,
         description = description,
         urlToImage = urlToImage,
+        url = url,
         sourceName = source?.name
     )
 }
@@ -33,6 +35,7 @@ fun NewsLocal.fromNewsLocal(): NewsEntity {
         title = title,
         description = description,
         urlToImage = urlToImage,
+        url = url,
         source = SourceEntity(name = sourceName)
     )
 }

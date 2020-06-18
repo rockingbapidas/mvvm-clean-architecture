@@ -4,12 +4,15 @@ import android.app.Activity
 import android.content.Intent
 import android.view.View
 import androidx.core.app.ActivityOptionsCompat
+import androidx.core.os.bundleOf
 import androidx.core.util.Pair
 import com.bapidas.news.appcore.activity.BaseActivity
 import com.bapidas.news.appcore.extensions.getStatusBarHeight
 import com.bapidas.news.appcore.extensions.makeStatusBarTransparent
+import com.bapidas.news.appcore.extensions.replaceFragment
 import com.bapidas.news.appcore.extensions.setMarginTop
 import com.bapidas.news.headlines.R
+import com.bapidas.news.headlines.browser.NewsBrowserFragment
 import com.bapidas.news.headlines.databinding.ActivityNewsDetailBinding
 import com.bapidas.news.headlines.model.Article
 import kotlinx.android.synthetic.main.activity_news_detail.*
@@ -31,16 +34,30 @@ class NewsDetailsActivity : BaseActivity<ActivityNewsDetailBinding, NewsDetailVi
         img_back.setOnClickListener {
             onBackPressed()
         }
+        img_web.setOnClickListener {
+            replaceFragment(
+                container.id,
+                NewsBrowserFragment.newInstance(),
+                arguments = bundleOf(
+                    NewsBrowserFragment.NEWS_EXTRA_DATA to viewModel.article.value
+                ),
+                addToBackStack = true
+            )
+        }
         supportStartPostponedEnterTransition()
     }
 
     override fun onBackPressed() {
-        super.onBackPressed()
-        supportFinishAfterTransition()
+        if (supportFragmentManager.backStackEntryCount > 0) {
+            supportFragmentManager.popBackStackImmediate()
+        } else {
+            super.onBackPressed()
+            supportFinishAfterTransition()
+        }
     }
 
     companion object {
-        const val NEWS_EXTRA_DATA = "newExtra"
+        const val NEWS_EXTRA_DATA = "newsExtra"
 
         fun open(parent: View, article: Article, fromActivity: Activity) {
             val card =

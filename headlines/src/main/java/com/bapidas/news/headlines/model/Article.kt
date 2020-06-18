@@ -7,7 +7,8 @@ class Article(
     val title: String? = null,
     val description: String? = null,
     val urlToImage: String? = null,
-    val sourceName: String? = null
+    val sourceName: String? = null,
+    val url: String? = null
 ) : Serializable {
     val dateString
         get() = publishedAt.split("T").getOrElse(0) { "" }

@@ -20,7 +20,7 @@ class NewsDataSource(
         params: LoadInitialParams<String>,
         callback: LoadInitialCallback<Article>
     ) {
-        Timber.v("loadInitial %s", "${" // "}${params.requestedLoadSize}")
+        Timber.v("loadInitial %s", "${"// "}${params.requestedLoadSize}")
         mCoroutineScope.launch {
             try {
                 val result = withContext(Dispatchers.IO) {

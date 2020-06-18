@@ -9,6 +9,7 @@ fun NewsDomain.mapToArticle(): Article {
         title = title,
         description = description,
         urlToImage = urlToImage,
+        url = url,
         sourceName = source?.name
     )
 }

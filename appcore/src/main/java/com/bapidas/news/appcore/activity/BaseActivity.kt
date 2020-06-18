@@ -10,14 +10,14 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import com.bapidas.news.appcore.BR
 import com.bapidas.news.appcore.di.qualifier.ActivityContext
-import com.bapidas.news.appcore.viewmodel.BaseViewModel
+import com.bapidas.news.appcore.viewmodel.BaseActivityViewModel
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
-abstract class BaseActivity<D : ViewDataBinding, V : BaseViewModel> : AppCompatActivity(),
+abstract class BaseActivity<D : ViewDataBinding, V : BaseActivityViewModel> : AppCompatActivity(),
     HasAndroidInjector {
     @Inject
     protected lateinit var supportFragmentInjector: DispatchingAndroidInjector<Any>
