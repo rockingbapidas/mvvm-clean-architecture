@@ -1,7 +1,9 @@
 package com.bapidas.news.data.repository
 
-import com.bapidas.news.data.source.NewsRemoteDataSource
+import com.bapidas.news.data.model.NewsListEntity
 
-abstract class NewsRemoteRepository(private val dataSource: NewsRemoteDataSource) {
-    suspend fun getRemoteNews(page: Int) = dataSource.getRemoteNews(page = page)
+interface NewsRemoteRepository {
+    suspend fun getNews(requestedLoadSize: Int): NewsListEntity
+
+    suspend fun getNewsAfter(requestedLoadSize: Int, page: Int): NewsListEntity
 }

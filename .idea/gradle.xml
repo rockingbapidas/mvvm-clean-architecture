@@ -17,7 +17,6 @@
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/framework" />
             <option value="$PROJECT_DIR$/headlines" />
-            <option value="$PROJECT_DIR$/usecase" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

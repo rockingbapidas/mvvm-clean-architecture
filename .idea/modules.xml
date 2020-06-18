@@ -11,7 +11,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/domain.iml" group="NewsApp-Clean/domain" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/framework/framework.iml" filepath="$PROJECT_DIR$/.idea/modules/framework/framework.iml" group="NewsApp-Clean/framework" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/headlines/headlines.iml" filepath="$PROJECT_DIR$/.idea/modules/headlines/headlines.iml" group="NewsApp-Clean/headlines" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usecase/usecase.iml" filepath="$PROJECT_DIR$/.idea/modules/usecase/usecase.iml" group="NewsApp-Clean/usecase" />
     </modules>
   </component>
 </project>

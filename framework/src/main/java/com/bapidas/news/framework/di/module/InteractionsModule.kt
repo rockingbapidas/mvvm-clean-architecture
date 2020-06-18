@@ -1,17 +1,15 @@
 package com.bapidas.news.framework.di.module
 
+import com.bapidas.news.data.NewsRepositoryImpl
+import com.bapidas.news.data.factory.NewsDataStoreFactory
+import com.bapidas.news.data.store.NewsLocalDataStore
+import com.bapidas.news.data.store.NewsRemoteDataStore
+import com.bapidas.news.domain.usecases.*
 import com.bapidas.news.framework.db.dao.RoomNewsDao
 import com.bapidas.news.framework.db.repository.RoomNewsRepository
-import com.bapidas.news.framework.db.source.RoomNewsDataSource
 import com.bapidas.news.framework.interactions.NewsInteractions
-import com.bapidas.news.framework.network.api.NewsRemoteApi
+import com.bapidas.news.framework.network.api.RemoteNewsApi
 import com.bapidas.news.framework.network.repository.RemoteNewsRepository
-import com.bapidas.news.framework.network.source.RemoteNewsDataSource
-import com.bapidas.news.framework.usecase.FetchNews
-import com.bapidas.news.framework.usecase.FetchNewsCount
-import com.bapidas.news.framework.usecase.FetchRemoteNews
-import com.bapidas.news.framework.usecase.SaveNews
-import com.bapidas.news.usecase.GetNews
 import dagger.Module
 import dagger.Provides
 
@@ -19,16 +17,21 @@ import dagger.Provides
 class InteractionsModule {
     @Provides
     fun provideNewsInteractions(
-        newsRemoteApi: NewsRemoteApi,
+        newsRemoteApi: RemoteNewsApi,
         newsDao: RoomNewsDao
     ): NewsInteractions {
-        val localRepository = RoomNewsRepository(RoomNewsDataSource(newsDao))
-        val remoteRepository = RemoteNewsRepository(RemoteNewsDataSource(newsRemoteApi))
+        val localRepository = RoomNewsRepository(newsDao)
+        val remoteRepository = RemoteNewsRepository(newsRemoteApi)
+        val mNewsLocalDataStore = NewsLocalDataStore(localRepository)
+        val mNewsRemoteDataStore = NewsRemoteDataStore(remoteRepository)
+        val mNewsDataStoreFactory = NewsDataStoreFactory(mNewsLocalDataStore, mNewsRemoteDataStore)
+        val mNewsRepositoryImpl = NewsRepositoryImpl(mNewsDataStoreFactory)
         return NewsInteractions(
-            SaveNews(localRepository),
-            FetchNews(localRepository),
-            FetchNewsCount(localRepository),
-            FetchRemoteNews(GetNews(remoteRepository))
+            SaveNews(mNewsRepositoryImpl),
+            GetNews(mNewsRepositoryImpl),
+            GetNewsAfter(mNewsRepositoryImpl),
+            GetNewsCount(mNewsRepositoryImpl),
+            ClearNews(mNewsRepositoryImpl)
         )
     }
 }

@@ -57,11 +57,6 @@ android {
     lintOptions {
         isCheckReleaseBuilds = false
     }
-
-    sourceSets {
-        getByName("test").resources.setSrcDirs(map { "sampledata" })
-        getByName("androidTest").resources.setSrcDirs(map { "sampledata" })
-    }
 }
 
 androidExtensions {

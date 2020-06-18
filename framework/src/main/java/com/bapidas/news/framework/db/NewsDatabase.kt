@@ -7,11 +7,11 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.bapidas.news.framework.BuildConfig
 import com.bapidas.news.framework.db.dao.RoomNewsDao
-import com.bapidas.news.framework.db.entity.NewsEntity
+import com.bapidas.news.framework.db.entity.NewsLocal
 import timber.log.Timber
 
 @Database(
-    entities = [NewsEntity::class],
+    entities = [NewsLocal::class],
     version = BuildConfig.DATABASE_VERSION,
     exportSchema = false
 )

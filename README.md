@@ -20,3 +20,5 @@ Unit Test - Junit and Mockito
 Instrumentation Test - Espresso
 
 Gradle - Kotlin DSL
+
+<img src="https://github.com/rockingbapidas/mvvm-clean-architecture/raw/master/screenshots/Screenshot_1592481436.png" height="500"> <img src="https://github.com/rockingbapidas/mvvm-clean-architecture/raw/master/screenshots/Screenshot_1592481441.png" height="500">

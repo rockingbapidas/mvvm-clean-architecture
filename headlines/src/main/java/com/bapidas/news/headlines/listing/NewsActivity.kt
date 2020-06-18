@@ -2,6 +2,7 @@ package com.bapidas.news.headlines.listing
 
 import android.app.Activity
 import android.content.Intent
+import android.os.Handler
 import android.view.View
 import androidx.lifecycle.Observer
 import com.bapidas.news.appcore.activity.BaseActivity
@@ -30,6 +31,15 @@ class NewsActivity : BaseActivity<ActivityNewsBinding, NewsViewModel>(), ItemVie
             if (it.isNotEmpty()) viewModel.isLoading.value = false
             newsAdapter.submitList(it)
         })
+
+        Handler().postDelayed({
+            viewModel.newsArticles.removeObservers(this)
+            viewModel.newsArticles.observe(this, Observer {
+                Timber.e("newsArticles %s", it.loadedCount)
+                if (it.isNotEmpty()) viewModel.isLoading.value = false
+                newsAdapter.submitList(it)
+            })
+        }, 2000)
     }
 
     override fun onViewCreated() {

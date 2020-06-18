@@ -1,19 +1,18 @@
 package com.bapidas.news.headlines.model
 
-import com.bapidas.news.framework.db.entity.NewsEntity
+import com.bapidas.news.domain.model.NewsDomain
+import com.bapidas.news.domain.model.NewsListDomain
 
-fun NewsEntity.mapToArticle(): Article {
+fun NewsDomain.mapToArticle(): Article {
     return Article(
         publishedAt = publishedAt,
         title = title,
         description = description,
         urlToImage = urlToImage,
-        sourceName = sourceName
+        sourceName = source?.name
     )
 }
 
-fun List<NewsEntity>.mapToArticle(): List<Article> {
-    return map {
-        it.mapToArticle()
-    }
+fun NewsListDomain.mapToArticle(): List<Article> {
+    return articles.map { it.mapToArticle() }
 }

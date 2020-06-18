@@ -1,10 +1,8 @@
 package com.bapidas.news.headlines.listing.paging
 
 import androidx.paging.ItemKeyedDataSource
-import com.bapidas.news.framework.db.entity.NewsEntity
 import com.bapidas.news.framework.interactions.NewsInteractions
-import com.bapidas.news.framework.network.source.RemoteNewsDataSource.Companion.INITIAL_PAGE
-import com.bapidas.news.framework.network.source.RemoteNewsDataSource.Companion.PAGE_SIZE
+import com.bapidas.news.headlines.BuildConfig
 import com.bapidas.news.headlines.model.Article
 import com.bapidas.news.headlines.model.mapToArticle
 import kotlinx.coroutines.CoroutineScope
@@ -17,60 +15,56 @@ class NewsDataSource(
     private val mNewsInteractions: NewsInteractions,
     private val mCoroutineScope: CoroutineScope
 ) : ItemKeyedDataSource<String, Article>() {
-    private var totalNewsArticle = 0
-    private var loadedNewsArticle = 0
 
     override fun loadInitial(
         params: LoadInitialParams<String>,
         callback: LoadInitialCallback<Article>
     ) {
-        Timber.v("loadInitial ")
+        Timber.v("loadInitial %s", "${" // "}${params.requestedLoadSize}")
         mCoroutineScope.launch {
             try {
                 val result = withContext(Dispatchers.IO) {
-                    mNewsInteractions.getRemoteNews(INITIAL_PAGE)
+                    mNewsInteractions.getNews(
+                        local = BuildConfig.LOCAL_CACHE,
+                        requestedLoadSize = REQUEST_LOAD_SIZE
+                    )
                 }
-                callback.onResult(mapResults(result.first, result.second))
+                callback.onResult(result.mapToArticle())
             } catch (e: Exception) {
                 e.printStackTrace()
             }
         }
     }
 
+    override fun loadBefore(params: LoadParams<String>, callback: LoadCallback<Article>) {
+        Timber.v("loadBefore")
+    }
+
     override fun loadAfter(params: LoadParams<String>, callback: LoadCallback<Article>) {
-        Timber.v("loadAfter ")
-        val isItemPending = loadedNewsArticle < totalNewsArticle
-        val nextPage = loadedNewsArticle.div(PAGE_SIZE).plus(1)
-        if (isItemPending) {
-            mCoroutineScope.launch {
-                try {
-                    val result = withContext(Dispatchers.IO) {
-                        mNewsInteractions.getRemoteNews(nextPage)
-                    }
-                    callback.onResult(mapResults(result.first, result.second))
-                } catch (e: Exception) {
-                    e.printStackTrace()
+        Timber.v("loadAfter %s", "${params.key}${" // "}${params.requestedLoadSize}")
+        mCoroutineScope.launch {
+            try {
+                val result = withContext(Dispatchers.IO) {
+                    mNewsInteractions.getNewsAfter(
+                        local = BuildConfig.LOCAL_CACHE,
+                        requestedLoadSize = params.requestedLoadSize,
+                        key = params.key,
+                        page = 0
+                    )
                 }
+                callback.onResult(result.mapToArticle())
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
         }
     }
 
-    override fun loadBefore(params: LoadParams<String>, callback: LoadCallback<Article>) {
-        Timber.v("loadBefore ")
-    }
-
     override fun getKey(item: Article): String {
-        Timber.v("getKey %s ", item.toString())
+        Timber.v("getKey %s ", item.publishedAt)
         return item.publishedAt
     }
 
-    private fun mapResults(
-        totalResults: Int,
-        newsList: List<NewsEntity>
-    ): List<Article> {
-        Timber.v("mapResults ")
-        loadedNewsArticle += PAGE_SIZE
-        totalNewsArticle = totalResults
-        return newsList.mapToArticle()
+    companion object {
+        private const val REQUEST_LOAD_SIZE = 20
     }
 }

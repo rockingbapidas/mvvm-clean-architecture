@@ -2,7 +2,7 @@ package com.bapidas.news.framework.di.module
 
 import android.app.Application
 import com.bapidas.news.framework.BuildConfig
-import com.bapidas.news.framework.network.Urls
+import com.bapidas.news.framework.network.api.Urls
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

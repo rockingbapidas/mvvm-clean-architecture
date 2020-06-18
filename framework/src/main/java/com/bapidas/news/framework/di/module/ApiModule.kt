@@ -1,6 +1,6 @@
 package com.bapidas.news.framework.di.module
 
-import com.bapidas.news.framework.network.api.NewsRemoteApi
+import com.bapidas.news.framework.network.api.RemoteNewsApi
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -11,5 +11,5 @@ class ApiModule {
     @Provides
     fun provideNewsRemoteApi(
         retrofit: Retrofit
-    ): NewsRemoteApi = retrofit.create(NewsRemoteApi::class.java)
+    ): RemoteNewsApi = retrofit.create(RemoteNewsApi::class.java)
 }

@@ -34,6 +34,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    sourceSets {
+        getByName("test").resources.setSrcDirs(map { "sampledata" })
+        getByName("androidTest").resources.setSrcDirs(map { "sampledata" })
+    }
 }
 
 dependencies {
@@ -41,6 +46,7 @@ dependencies {
 
     implementation(project(":appcore"))
     implementation(project(":framework"))
+    implementation(project(":domain"))
 
     androidx()
     paging()

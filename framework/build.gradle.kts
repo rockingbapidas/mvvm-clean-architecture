@@ -50,7 +50,6 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "src/main/libs", "include" to listOf("*.jar", "*.aar"))))
 
-    implementation(project(":usecase"))
     implementation(project(":data"))
     implementation(project(":domain"))
 
