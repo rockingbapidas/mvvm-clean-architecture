@@ -31,6 +31,7 @@ class NewsDetailsActivity : BaseActivity<ActivityNewsDetailBinding, NewsDetailVi
         super.onViewCreated()
         makeStatusBarTransparent()
         appbar.setMarginTop(getStatusBarHeight())
+        container.setMarginTop(getStatusBarHeight())
         img_back.setOnClickListener {
             onBackPressed()
         }
