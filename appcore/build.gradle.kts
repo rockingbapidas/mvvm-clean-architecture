@@ -8,6 +8,7 @@ plugins {
 android {
     compileSdkVersion(Apps.compileSdk)
     buildFeatures.dataBinding = true
+    buildFeatures.viewBinding = true
     kotlinOptions.jvmTarget = "1.8"
 
     defaultConfig {
