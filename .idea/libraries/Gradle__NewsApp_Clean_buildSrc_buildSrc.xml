@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: NewsApp-Clean_buildSrc.buildSrc">
+  <library name="Gradle: NewsApp-Clean.buildSrc.buildSrc">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/buildSrc/build/libs/buildSrc.jar!/" />
     </CLASSES>

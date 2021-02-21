@@ -80,7 +80,6 @@ dependencies {
     paging()
     workManager()
     lifeCycle()
-    shimmer()
 
     kotlin()
     dagger()

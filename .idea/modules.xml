@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ByjusAssignment.iml" filepath="$PROJECT_DIR$/ByjusAssignment.iml" group="ByjusAssignment" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/NewsApp-Clean.iml" filepath="$PROJECT_DIR$/.idea/modules/NewsApp-Clean.iml" group="NewsApp-Clean" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/NewsApp-Clean_buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/NewsApp-Clean_buildSrc.iml" group="NewsApp-Clean/NewsApp-Clean_buildSrc" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="NewsApp-Clean/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appcore/appcore.iml" filepath="$PROJECT_DIR$/.idea/modules/appcore/appcore.iml" group="NewsApp-Clean/appcore" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/data.iml" group="NewsApp-Clean/data" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/domain.iml" group="NewsApp-Clean/domain" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/framework/framework.iml" filepath="$PROJECT_DIR$/.idea/modules/framework/framework.iml" group="NewsApp-Clean/framework" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/headlines/headlines.iml" filepath="$PROJECT_DIR$/.idea/modules/headlines/headlines.iml" group="NewsApp-Clean/headlines" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/NewsApp-Clean.iml" filepath="$PROJECT_DIR$/.idea/modules/NewsApp-Clean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/NewsApp-Clean.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/NewsApp-Clean.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appcore/NewsApp-Clean.appcore.iml" filepath="$PROJECT_DIR$/.idea/modules/appcore/NewsApp-Clean.appcore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/NewsApp-Clean.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/NewsApp-Clean.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/NewsApp-Clean.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/NewsApp-Clean.data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/NewsApp-Clean.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/NewsApp-Clean.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/framework/NewsApp-Clean.framework.iml" filepath="$PROJECT_DIR$/.idea/modules/framework/NewsApp-Clean.framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/headlines/NewsApp-Clean.headlines.iml" filepath="$PROJECT_DIR$/.idea/modules/headlines/NewsApp-Clean.headlines.iml" />
     </modules>
   </component>
 </project>

@@ -9,7 +9,7 @@ object Apps {
     const val versionName = "1.0.0"
     const val versionCode = 1
     const val domain = "newsapi.org"
-    const val apiDomain = "http://newsapi.org"
+    const val apiDomain = "http://$domain"
     const val apiKey = "59b23dbaede34a2488fe2d4da93b9ffb"
     const val localCache = "true"
 }

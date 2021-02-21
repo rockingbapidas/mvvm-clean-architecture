@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: NewsApp-Clean.data.data">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/data/build/libs/data.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

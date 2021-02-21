@@ -1,5 +1,6 @@
 package com.bapidas.news.headlines.di.module
 
+import com.bapidas.news.headlines.service.HeadlinesDemoIntentService
 import com.bapidas.news.headlines.service.HeadlinesDemoService
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -8,4 +9,7 @@ import dagger.android.ContributesAndroidInjector
 internal abstract class HeadlinesServiceModule {
     @ContributesAndroidInjector
     abstract fun contributeHeadlinesDemoService(): HeadlinesDemoService
+
+    @ContributesAndroidInjector
+    abstract fun contributeHeadlinesDemoIntentService(): HeadlinesDemoIntentService
 }
